@@ -55,7 +55,7 @@ class flixfragment : Fragment(), OnListFragmentInteractionListener {
         // Create and set up an AsyncHTTPClient() here
         val client = AsyncHttpClient()
         val params = RequestParams()
-        params["api-key"] = API_KEY
+        params["api_key"] = API_KEY
 
         client[
                 "https://api.themoviedb.org/3/movie/now_playing",
@@ -74,8 +74,8 @@ class flixfragment : Fragment(), OnListFragmentInteractionListener {
                     }
 
                     override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON) {
-                        //Log.d("BestSellerBooksFragment", json.toString())
-
+                        Log.d("BestSellerBooksFragment", json.toString())
+                        Log.d("asdf", "adshfadsikahdslkjfahdslkjfhdslkfjahdslkfjadshflkjadshflkjdshflkjadsfsdfiadsfadskjf;ldskjfalds;kjfalds;kj")
                         val gson = Gson()
 
                         val resultsJSON : String = json.jsonObject.get("results").toString()

@@ -31,14 +31,12 @@ class flixrecyclerview(
      */
     inner class BookViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         var mItem: flix? = null
-        val mBookTitle: TextView = mView.findViewById<View>(id.book_title) as TextView
-        val mBookAuthor: TextView = mView.findViewById<View>(id.book_author) as TextView
-        val mBookRanking: TextView = mView.findViewById<View>(id.ranking) as TextView
-        val mBookDescription: TextView = mView.findViewById<View>(id.book_description) as TextView
+        val mMovieTitle: TextView = mView.findViewById<View>(id.book_title) as TextView
+        val mMovieDescription: TextView = mView.findViewById<View>(id.book_description) as TextView
         val mMovieImage: ImageView = mView.findViewById(id.movie_image) as ImageView
 
         override fun toString(): String {
-            return mBookTitle.toString() + " '" + mBookAuthor.text + "'"
+            return mMovieTitle.toString() + " '"
         }
     }
 
@@ -49,13 +47,12 @@ class flixrecyclerview(
         val movie = movies[position]
 
         holder.mItem = movie
-        holder.mBookTitle.text = movie.title
-        holder.mBookDescription.text = movie.description
-        holder.mBookRanking.text = movie.rank.toString()
+        holder.mMovieTitle.text = movie.title
+        holder.mMovieDescription.text = movie.description
 
         Glide.with(holder.mView)
 
-            .load(movie.movieImageUrl)
+            .load("https://image.tmdb.org/t/p/w500/" + movie.movieImageUrl)
             .centerInside()
             .into(holder.mMovieImage)
 

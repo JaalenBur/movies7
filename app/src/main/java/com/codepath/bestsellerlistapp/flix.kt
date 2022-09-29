@@ -3,8 +3,7 @@ package com.codepath.bestsellerlistapp
 import com.google.gson.annotations.SerializedName
 
 class flix {
-    @SerializedName("rank")
-    var rank = 0
+
 
     @JvmField
     @SerializedName("title")
