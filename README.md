@@ -1,4 +1,4 @@
-# Android Project 3 - Flixapp part one
+# Android Project 4 - Flixapp part two
 
 Submitted by: Jaalen Burton
 
