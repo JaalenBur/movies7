@@ -17,4 +17,7 @@ class flix {
     @SerializedName("overview")
     var description: String? = null
 
+    @SerializedName("backdrop_path")
+    var backdrop: String? = null
+
 }

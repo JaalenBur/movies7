@@ -1,5 +1,6 @@
 package com.codepath.bestsellerlistapp
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,12 +8,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.codepath.articlesearch.DetailActivity
 import com.codepath.bestsellerlistapp.R.id
 
 /**
  * [RecyclerView.Adapter] that can display a [flix] and makes a call to the
  * specified [OnListFragmentInteractionListener].
  */
+
+const val movie2 = "movie2"
+
 class flixrecyclerview(
     private val movies: List<flix>,
     private val mListener: OnListFragmentInteractionListener?
@@ -63,10 +68,19 @@ class flixrecyclerview(
         }
     }
 
+        override fun onClick(v: View?) {
+            val movie = movies[absoluteAdapterPosition]
+
+            val intent = Intent(holder.mView, DetailActivity::class.java)
+            intent.putExtra(movies2, movie)
+            holder.mView.startActivity(intent)
+        }
     /**
      * Remember: RecyclerView adapters require a getItemCount() method.
      */
     override fun getItemCount(): Int {
         return movies.size
     }
+
+
 }
